@@ -9,18 +9,21 @@ export default class Login extends React.Component {
     render(){
         const { currentUser, logout, clearErrors } = this.props;
 
-        const sessionLogin = () => (
+        const sessionLoggedIn = () => (
             <div>
-                Welcome!
+                <h2>Welcome!</h2>
+                <button onClick={logout}><i className="fas fa-sign-out-alt temp-logout"></i></button>
             </div>
         )
 
-        const sessionLogout = () => (
+        const sessionLoggedOut = () => (
             <div>
-                See ya!
+                <Link to='/login/' onClick={clearErrors}><span>Log in</span></Link>
+                <br />
+                <Link to='/signup/' onClick={clearErrors}><span>Sign up</span></Link>
             </div>
         )
 
-        return currentUser ? sessionLogin() : sessionLogout();
+        return currentUser ? sessionLoggedIn() : sessionLoggedOut();
     }
 }
