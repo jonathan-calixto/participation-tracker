@@ -11,8 +11,8 @@ export default class Login extends React.Component {
 
         const sessionLoggedIn = () => (
             <div>
-                <h2>Welcome!</h2>
-                <button onClick={logout}><i className="fas fa-sign-out-alt temp-logout"></i></button>
+                <h2>Welcome, <Link to='/profile/'>{currentUser.username}</Link>!</h2>
+                <button onClick={logout}><i className="fas fa-sign-out-alt temp-logout"> Logout</i></button>
             </div>
         )
 
