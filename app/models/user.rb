@@ -22,7 +22,7 @@ class User < ApplicationRecord
     validates :username, :session_token, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
-    has_many :students
+    has_many :students,
         foreign_key: :teacher_id,
         class_name: :Student
 

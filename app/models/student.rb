@@ -19,12 +19,12 @@ class Student < ApplicationRecord
 
     validates :first_name, :last_name, presence: {message: 'Please enter a valid first and last name'}
 
-    belongs_to :teacher
+    belongs_to :teacher,
         foreign_key: :teacher_id,
         class_name: :User
 
 
-    belongs_to :group
+    belongs_to :group,
         foreign_key: :group_id,
         class_name: :Group
         
