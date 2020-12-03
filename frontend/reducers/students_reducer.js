@@ -6,7 +6,7 @@ const StudentsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_STUDENTS:
-            return action.photos;
+            return action.students;
         case RECEIVE_STUDENT:
             return Object.assign({}, state, { [action.student.id]: action.student });
         case REMOVE_STUDENT:
