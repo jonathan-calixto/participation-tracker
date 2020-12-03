@@ -15,7 +15,8 @@ export const studentId = studentId => {
 export const createStudent = student => {
     return $.ajax({
         method: 'post',
-        url: 'api/students'
+        url: 'api/students',
+        data: { student }
     });
 };
 
