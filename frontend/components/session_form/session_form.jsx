@@ -102,7 +102,7 @@ export default class SessionForm extends React.Component {
             return (
                 <div>
                     <form onSubmit={this.handleSubmit}>
-                        <span><h3>Log in</h3></span>
+                        <h3>Log in</h3>
                         <br />
                         <span>{this.renderErrors()}</span>
                         <br />
@@ -129,7 +129,7 @@ export default class SessionForm extends React.Component {
                         <button>{this.props.formType}</button>
                         <br /><br />
                         <button onClick={this.demoUser}>Demo User</button>
-                        <span><p> Not a user? <Link to='/signup/'>Sign up!</Link></p></span>
+                        <p> Not a user?</p><Link to='/signup/'>Sign up!</Link>
                     </form>
                 </div>
             );
