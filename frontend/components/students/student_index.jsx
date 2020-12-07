@@ -13,13 +13,13 @@ export default class PhotoIndex extends React.Component {
 
         return (
             <div>
-                <div>
+                <ul>
                     {students.map(student => {
                         return (
-                            <li></li>
+                        <li>{student.first}</li>
                         )
                     })}
-                </div>
+                </ul>
             </div>
         )
     }
