@@ -9,6 +9,8 @@
 /node_modules/
 /bundle.js
 /bundle.js.map
+participation-tracker/app/assets/javascripts/bundle.js
+participation-tracker/app/assets/javascripts/bundle.js.map
 
 # Ignore all logfiles and tempfiles.
 /log/*
