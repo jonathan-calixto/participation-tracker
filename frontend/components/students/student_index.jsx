@@ -1,6 +1,4 @@
 import React from 'react';
-import StudentIndexItem from './student_index_item';
-
 
 export default class PhotoIndex extends React.Component {
 
@@ -13,13 +11,11 @@ export default class PhotoIndex extends React.Component {
 
         return (
             <div>
-                <div>
-                    {students.map(student => {
-                        return (
-                            <li></li>
-                        )
-                    })}
-                </div>
+                <ul>
+                    {students.map(student => (
+                        <li>{student.lastName}, {student.firstName} - <button onClick={deleteStudent} >Delete</button></li>
+                    ))}
+                </ul>
             </div>
         )
     }
