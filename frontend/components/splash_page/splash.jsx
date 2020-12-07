@@ -1,8 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import LoadingIcon from '../loading/loading';
+import HomePage from './home_page';
+import HomeFeed from './home_feed';
+import {Link} from 'react-router-dom';
 
-class Splash extends React.Component {
+export default class Splash extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,32 +31,10 @@ class Splash extends React.Component {
         const { currentUser } = this.props;
         
         if (this.state.loading) {
-            return <LoadingIcon />;
-        }
+        return <LoadingIcon />;
+    }
 
-        const loggedOut = () => (
-            <div className='splash-wrapper'>
-                <div className='splash-img'>
-                    <div className='splash-textbox'>
-                        <h1 className='splash-header'>Welcome to the last tracker you will ever need!</h1>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam illum dolores sed fugit earum, maxime dicta possimus aspernatur sequi. Aut voluptatem quam natus aliquid sunt quia! Ut, quas. Explicabo, molestiae.</h3>
-                        <div className='splash-button-wrapper'> 
-                            <button className='login' onClick={this.handleClick}>Log In</button>
-                            <button className='signup'>Sign Up</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
-
-        const loggedIn = () => (
-            <div>
-                <h1>This will be where they begin setup.</h1>
-            </div>
-        )
-
-        return currentUser ? loggedIn() : loggedOut();
+        return (currentUser ? <HomePage/> : <HomeFeed/>);
     }
 }
 
-export default withRouter(Splash);
