@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Raleway',
+    sans-serif;
 }
 
 .session-form {
@@ -16,10 +18,17 @@
 
 .session-form h2 {
   background: transparent;
+  font-family: 'Cabin',
+    sans-serif;
 }
 
 .sidebar {
   width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-indent: 10px;
+  flex-direction: column;
 }
 
 .session-details {

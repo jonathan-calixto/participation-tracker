@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 export default class SessionForm extends React.Component {
     constructor(props) {
         super(props);
@@ -9,38 +8,30 @@ export default class SessionForm extends React.Component {
             email: '',
             password: ''
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoUser = this.demoUser.bind(this);
     }
-
     componentDidMount() {
         this.props.clearErrors();
     }
-
     demoUser(event) {
         event.preventDefault();
         const demoUser = {
             username: 'nathan0922',
             password: '123456'
         };
-
         this.props.loginDemoUser(demoUser);
     }
-
     handleSubmit(event) {
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
-
     update(field) {
         return event => this.setState({
             [field]: event.currentTarget.value
         });
     }
-
-
     renderErrors() {
         const { errors } = this.props;
         return (
@@ -51,7 +42,6 @@ export default class SessionForm extends React.Component {
             </ul>
         );
     }
-
     render() {
         if (this.props.formType === 'Sign up') {
             return (
@@ -103,7 +93,7 @@ export default class SessionForm extends React.Component {
                 <div className='splash-wrapper session-wrapper'>
                     <form className='session-form' onSubmit={this.handleSubmit}>
                         <div className='sidebar'>
-                            <h2>Welcome back</h2>
+                            <h2>Welcome Back!</h2>
                             <p>Enter your personal details to get logged in.</p>
                         </div>
                         <div className='session-details'>
