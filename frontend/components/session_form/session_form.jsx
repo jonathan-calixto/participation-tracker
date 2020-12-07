@@ -100,7 +100,7 @@ export default class SessionForm extends React.Component {
             );
         } else {
             return (
-                <div>
+                <div className='session-wrapper'>
                     <form onSubmit={this.handleSubmit}>
                         <h3>Log in</h3>
                         <br />
