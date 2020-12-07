@@ -16,7 +16,7 @@ export const createStudent = student => {
     return $.ajax({
         method: 'post',
         url: 'api/students',
-        data: { student }
+        data: student
     });
 };
 
