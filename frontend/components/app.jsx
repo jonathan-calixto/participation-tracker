@@ -5,6 +5,7 @@ import LoginContainer from './login/login_container';
 import SplashContainer from './splash_page/splash_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import StudentCreateContainer from './students/student_create_container';
 
 const App = () => (
     <div className='main'>
@@ -17,6 +18,7 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <AuthRoute exact path="/edit" component={StudentCreateContainer} />
         </Switch>
     </div>
 );

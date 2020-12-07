@@ -31,8 +31,8 @@ export default class Splash extends React.Component {
         const { currentUser } = this.props;
         
         if (this.state.loading) {
-        return <LoadingIcon />;
-    }
+            return <LoadingIcon />;
+        }
 
         return (currentUser ? <HomePage/> : <HomeFeed/>);
     }

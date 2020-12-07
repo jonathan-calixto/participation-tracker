@@ -1,4 +1,5 @@
 import React from 'react';
+import StudentIndex from './student_index_container';
 
 export default class StudentCreate extends React.Component {
     constructor(props) {
@@ -17,10 +18,7 @@ export default class StudentCreate extends React.Component {
         formData.append('student[last_name]', this.state.lastName);
         formData.append('student[teacher_id]', this.state.teacherId);
         formData.append('student[group_id]', this.state.groupId);
-        this.props.createStudent(formData)
-            .then(
-
-        );
+        this.props.createStudent(formData);
     }
 
     render() {
@@ -30,6 +28,8 @@ export default class StudentCreate extends React.Component {
                 <div>
                     <h2>Add Students</h2>
                 </div>
+
+                <StudentIndex />
 
                 <form onSubmit={this.handleSubmit}>
                     <label>First Name:
