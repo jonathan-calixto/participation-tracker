@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default class Login extends React.Component {
+    
     constructor(props){
         super(props);
     }
@@ -17,10 +18,10 @@ export default class Login extends React.Component {
         )
 
         const sessionLoggedOut = () => (
-            <div>
-                <Link to='/login/' onClick={clearErrors}><span>Log in</span></Link>
-                <br />
-                <Link to='/signup/' onClick={clearErrors}><span>Sign up</span></Link>
+            <div className='splash-nav-wrapper'>
+                <h3>Menu</h3>
+                <h3>Classroom Counts</h3>
+                <Link to='/signup/' onClick={clearErrors}>Sign up</Link>
             </div>
         )
 
