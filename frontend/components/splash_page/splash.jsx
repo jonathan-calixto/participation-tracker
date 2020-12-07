@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import LoadingIcon from '../loading/loading';
 
 class Splash extends React.Component {
@@ -7,21 +7,21 @@ class Splash extends React.Component {
         super(props);
         this.state = {
             loading: true
-        }
+        };
         this.handleClick = this.handleClick.bind(this);
         this.handleClick2 = this.handleClick2.bind(this);
     }
 
     handleClick() {
-        this.props.history.push('/login')
+        this.props.history.push('/login');
     }
 
     handleClick2() {
-        this.props.history.push('/signup')
+        this.props.history.push('/signup');
     }
 
     componentDidMount() {
-        this.setState({loading: false})
+        this.setState({loading: false});
     }
 
     render() {
