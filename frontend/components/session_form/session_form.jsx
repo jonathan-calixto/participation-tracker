@@ -97,31 +97,41 @@ export default class SessionForm extends React.Component {
                             <p>Enter your personal details to get logged in.</p>
                         </div>
                         <div className='session-details'>
-                            <h3>Classroom Counts</h3>
                             <br />
                             <span>{this.renderErrors()}</span>
                             <br />
+                            <div className='input-wrapper'>
+                            <div className='fontuser'>
                             <label>
                                 Username:
-                                <br />
+                            </label>
+                            <br></br>
                                 <input
+                                    className='session-input'
                                     type="text"
+                                    placeholder='Username'
                                     value={this.state.username}
                                     onChange={this.update('username')}
                                 />
-                            </label>
+                                <i class="fa fa-user fa-lg"></i> 
+                            </div>
                             <br /><br />
+                            <div className='fontpassword'>
                             <label>
                                 Password:
-                                <br />
+                            </label>
+                           
                                 <input
+                                    className='session-input'
                                     type="password"
                                     value={this.state.password}
+                                    placeholder='Password'
                                     onChange={this.update('password')}
                                 />
-                            </label>
-                            <br /><br />
-                            <button>{this.props.formType}</button>
+                                <i class="fa fa-key fa-lg"></i> 
+                                </div>
+                            </div>
+                            <button className='login sessionbutton'>{this.props.formType}</button>
                             <br /><br />
                             <button onClick={this.demoUser}>Demo User</button>
                             <p> Not a user?</p><Link to='/signup/'>Sign up!</Link>
