@@ -5,7 +5,7 @@ export const fetchStudents = () => {
     });
 };
 
-export const studentId = studentId => {
+export const fetchStudent = studentId => {
     return $.ajax({
         method: 'get',
         url: `api/students/${studentId}`

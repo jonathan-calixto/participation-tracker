@@ -1,6 +1,6 @@
 import { RECEIVE_STUDENTS, RECEIVE_STUDENT, REMOVE_STUDENT } from '../actions/student_actions';
 
-const StudentsReducer = (state = {}, action) => {
+export const studentsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
 
@@ -16,5 +16,3 @@ const StudentsReducer = (state = {}, action) => {
             return state;
     }
 };
-
-export default StudentsReducer;

@@ -296,7 +296,7 @@ var App = function App() {
     exact: true,
     path: "/signup",
     component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/edit",
     component: _students_student_create_container__WEBPACK_IMPORTED_MODULE_7__["default"]
@@ -1123,8 +1123,7 @@ var mSTP = function mSTP(state) {
       firstName: '',
       lastName: '',
       groupId: null,
-      teacherId: state.session.id,
-      teacherName: state.entities.users[state.session.id].username
+      teacherId: state.session.id
     },
     formType: 'Add New Student'
   };
@@ -1352,6 +1351,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session_reducer */ "./frontend/reducers/session_reducer.js");
 /* harmony import */ var _entities_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./entities_reducer */ "./frontend/reducers/entities_reducer.js");
 /* harmony import */ var _errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./errors_reducer */ "./frontend/reducers/errors_reducer.js");
+/* harmony import */ var _students_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./students_reducer */ "./frontend/reducers/students_reducer.js");
+
 
 
 
@@ -1359,6 +1360,7 @@ __webpack_require__.r(__webpack_exports__);
 var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_2__["entitiesReducer"],
   session: _session_reducer__WEBPACK_IMPORTED_MODULE_1__["sessionReducer"],
+  students: _students_reducer__WEBPACK_IMPORTED_MODULE_4__["studentsReducer"],
   errors: _errors_reducer__WEBPACK_IMPORTED_MODULE_3__["errorsReducer"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer);
@@ -1429,6 +1431,44 @@ var sessionReducer = function sessionReducer() {
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return _nullUser;
+
+    default:
+      return state;
+  }
+};
+
+/***/ }),
+
+/***/ "./frontend/reducers/students_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/students_reducer.js ***!
+  \***********************************************/
+/*! exports provided: studentsReducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "studentsReducer", function() { return studentsReducer; });
+/* harmony import */ var _actions_student_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/student_actions */ "./frontend/actions/student_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var studentsReducer = function studentsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_student_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_STUDENTS"]:
+      return action.students;
+
+    case _actions_student_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_STUDENT"]:
+      return Object.assign({}, state, _defineProperty({}, action.student.id, action.student));
+
+    case _actions_student_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_STUDENT"]:
+      delete newState[action.studentId];
+      return newState;
 
     default:
       return state;
@@ -1607,13 +1647,13 @@ var logout = function logout() {
 /*!*******************************************!*\
   !*** ./frontend/util/student_api_util.js ***!
   \*******************************************/
-/*! exports provided: fetchStudents, studentId, createStudent, updateStudent, deleteStudent */
+/*! exports provided: fetchStudents, fetchStudent, createStudent, updateStudent, deleteStudent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchStudents", function() { return fetchStudents; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "studentId", function() { return studentId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchStudent", function() { return fetchStudent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStudent", function() { return createStudent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateStudent", function() { return updateStudent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteStudent", function() { return deleteStudent; });
@@ -1623,10 +1663,10 @@ var fetchStudents = function fetchStudents() {
     url: 'api/students'
   });
 };
-var studentId = function studentId(_studentId) {
+var fetchStudent = function fetchStudent(studentId) {
   return $.ajax({
     method: 'get',
-    url: "api/students/".concat(_studentId)
+    url: "api/students/".concat(studentId)
   });
 };
 var createStudent = function createStudent(student) {
