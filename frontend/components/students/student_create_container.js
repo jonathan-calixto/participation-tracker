@@ -10,7 +10,6 @@ const mSTP = state => {
             lastName: '',
             groupId: null,
             teacherId: state.session.id,
-            teacherName: state.entities.users[state.session.id].username,
         },
         formType: 'Add New Student'
     };
