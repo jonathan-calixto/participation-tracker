@@ -5,7 +5,7 @@ const homeFeed = () => (
     <div className='splash-wrapper'>
         <div className='splash-nav-wrapper'>
             <h3 id='github'><a href='https://github.com/jonathan-calixto/participation-tracker' target='_blank'>Github</a></h3>
-            <h3 id='title'>ClassroomCounts</h3>
+            <h3 id='title'>Classroom Counts</h3>
             <Link className='login signup' to='/signup/'>Sign Up</Link>
         </div>
 
