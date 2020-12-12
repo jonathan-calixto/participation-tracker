@@ -12,7 +12,7 @@ const homeFeed = () => (
         <div className='splash-img'>
             <div className='splash-textbox'>
                 <h1 className='splash-header'>Classroom Counts</h1>
-                <h3>The best student participation tracking app you'll ever use</h3>
+                <h3>The best student participation tracking app you'll ever need</h3>
                 <div className='splash-button-wrapper'> 
                     <Link className='login' to='/login/'>Log In</Link>
                 </div>
