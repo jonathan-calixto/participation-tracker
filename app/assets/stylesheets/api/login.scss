@@ -13,33 +13,38 @@
   background-color: white;
   opacity: .9;
   border-radius: 20px;
-  display: flex;
+  // display: flex;
+  overflow: hidden;
 }
 
 .session-form h2 {
   background: transparent;
-  font-family: 'Cabin',
-    sans-serif;
+   font-family: 'Cabin',
+   sans-serif;
 }
 
 .sidebar {
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-indent: 10px;
-  flex-direction: column;
-  background-color: lightgreen;
-  opacity: .9;
-  border-radius: 20px 0px 0px 20px;
+      /* width: 60%; */
+      width: 300px;
+      height: 600px;
+      float: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgreen;
+      opacity: .9;
 }
 
 .session-details {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      /* width: 60%; */
+      width: 500px;
+      height: 600px;
+      float: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 }
 
 .session-details label {
