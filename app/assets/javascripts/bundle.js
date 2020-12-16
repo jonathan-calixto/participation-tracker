@@ -626,41 +626,11 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     value: function swap() {
       var details = document.getElementsByClassName('session-details')[0];
       var sidebar = document.getElementsByClassName('sidebar')[0];
-      var first = sidebar.getBoundingClientRect(); // const second = sidebar.getBoundingClientRect();
-      // execute the script that causes layout change
-      // doSomething();
-      // Last: get the final bounds
-      // const last = elm.getBoundingClientRect();
-      // Invert: determine the delta between the 
-      // first and last bounds to invert the element
-
-      var deltaY = 200;
-      var deltaX = first.left + deltaY; // const deltaY = first.top - last.top;
-      // const deltaW = first.width / last.width;
-      // const deltaH = first.height / last.height;
-
-      first.animate([{
-        transformOrigin: 'top left',
-        transform: "\n            translate(".concat(deltaX, "px, ").concat(deltaY, "px)\n        ")
-      }, {
-        transformOrigin: 'top left',
-        transform: 'none'
-      }], {
-        duration: 300,
-        easing: 'ease-in-out',
-        fill: 'both'
-      }); // second.animate([{
-      // transformOrigin: 'top left',
-      // transform: `
-      //     translate(${deltaX}px, ${deltaY}px)
-      // `
-      // }, {
-      // transformOrigin: 'top left',
-      // transform: 'none'
-      // }], {
-      // duration: 300,
-      // easing: 'ease-in-out',
-      // fill: 'both'
+      sidebar.addClass(); // details.animate([
+      // { transform: 'translateX(300px)' },
+      // ], {
+      // duration: 1000,
+      // iterations: Infinity
       // });
     }
   }, {
@@ -757,7 +727,8 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
           onClick: this.demoUser
         }, "Demo User"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Not a user?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           className: "swap-button",
-          to: "/signup/"
+          to: "/signup/",
+          onClick: this.swap
         }, "Sign up!"))));
       }
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 export default class SessionForm extends React.Component {
     constructor(props) {
         super(props);
@@ -39,51 +40,15 @@ export default class SessionForm extends React.Component {
         const sidebar = document.getElementsByClassName('sidebar')[0];
 
 
-        
-        const first = sidebar.getBoundingClientRect();
-        // const second = sidebar.getBoundingClientRect();
+        sidebar.addClass()
 
-        // execute the script that causes layout change
-        // doSomething();
-
-        // Last: get the final bounds
-        // const last = elm.getBoundingClientRect();
-
-        // Invert: determine the delta between the 
-        // first and last bounds to invert the element
-        const deltaY = 200;
-        const deltaX = first.left + deltaY;
-        // const deltaY = first.top - last.top;
-        // const deltaW = first.width / last.width;
-        // const deltaH = first.height / last.height;
-
-        first.animate([{
-        transformOrigin: 'top left',
-        transform: `
-            translate(${deltaX}px, ${deltaY}px)
-        `
-        }, {
-        transformOrigin: 'top left',
-        transform: 'none'
-        }], {
-        duration: 300,
-        easing: 'ease-in-out',
-        fill: 'both'
-        });
-
-        // second.animate([{
-        // transformOrigin: 'top left',
-        // transform: `
-        //     translate(${deltaX}px, ${deltaY}px)
-        // `
-        // }, {
-        // transformOrigin: 'top left',
-        // transform: 'none'
-        // }], {
-        // duration: 300,
-        // easing: 'ease-in-out',
-        // fill: 'both'
+        // details.animate([
+        // { transform: 'translateX(300px)' },
+        // ], {
+        // duration: 1000,
+        // iterations: Infinity
         // });
+
     }
 
     renderErrors() {
@@ -194,7 +159,7 @@ export default class SessionForm extends React.Component {
                             <button className='login sessionbutton'>{this.props.formType}</button>
                             <br /><br />
                             <button onClick={this.demoUser}>Demo User</button>
-                            <p> Not a user?</p><Link className='swap-button' to='/signup/'>Sign up!</Link>
+                            <p> Not a user?</p><Link className='swap-button' to='/signup/' onClick={this.swap}>Sign up!</Link>
                         </div>
                     </form>
                 </div>
