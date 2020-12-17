@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 export default class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoUser = this.demoUser.bind(this);
+        this.swap = this.swap.bind(this);
     }
     componentDidMount() {
         this.props.clearErrors();
@@ -32,6 +34,23 @@ export default class SessionForm extends React.Component {
             [field]: event.currentTarget.value
         });
     }
+
+    swap() {
+        const details = document.getElementsByClassName('session-details')[0];
+        const sidebar = document.getElementsByClassName('sidebar')[0];
+
+
+        sidebar.addClass()
+
+        // details.animate([
+        // { transform: 'translateX(300px)' },
+        // ], {
+        // duration: 1000,
+        // iterations: Infinity
+        // });
+
+    }
+
     renderErrors() {
         const { errors } = this.props;
         return (
@@ -45,46 +64,52 @@ export default class SessionForm extends React.Component {
     render() {
         if (this.props.formType === 'Sign up') {
             return (
-                <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <button onClick={this.demoUser}>Demo User</button>
-                        <br /><br />
-                        <div><p>_______________________   or   _______________________</p></div>
-                        <br />
-                        <span>{this.renderErrors()}</span>
-                        <br />
-                        <label>
-                            Username:
-                                <br />
-                            <input
-                                type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                            />
-                        </label>
-                        <br /><br />
-                        <label>
-                            Email:
-                                <br />
-                            <input
-                                type="text"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                            />
-                        </label>
-                        <br /><br />
-                        <label>
-                            Password:
-                                <br />
-                            <input
-                                type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                            />
-                        </label>
-                        <br /><br />
-                        <button type="submit">{this.props.formType}</button>
-                        <span><p>Already have an account? <Link to='/login/'>Log in!</Link></p></span>
+                <div className='splash-wrapper session-wrapper'>
+                    <form className='session-form' onSubmit={this.handleSubmit}>
+                        <div className='sidebar'>
+                            <h2>Create an Account!</h2>
+                            <p>Enter your personal details to get started.</p>
+                        </div>
+                        <div className='session-details'>
+                            <br />
+                            <span>{this.renderErrors()}</span>
+                            <br />
+                            <div className='input-wrapper'>
+                            <div className='fontuser'>
+                            <label>
+                                Username:
+                            </label>
+                            <br></br>
+                                <input
+                                    className='session-input'
+                                    type="text"
+                                    placeholder='Username'
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                />
+                                <i class="fa fa-user fa-lg"></i> 
+                            </div>
+                            <br /><br />
+                            <div className='fontpassword'>
+                            <label>
+                                Password:
+                            </label>
+                           
+                                <input
+                                    className='session-input'
+                                    type="password"
+                                    value={this.state.password}
+                                    placeholder='Password'
+                                    onChange={this.update('password')}
+                                />
+                                <i class="fa fa-key fa-lg"></i> 
+                                </div>
+                                <button className='login sessionbutton'>{this.props.formType}</button>
+                                <br /><br />
+                                <button onClick={this.demoUser}>Demo User</button>
+                                <p>Already a user?</p><Link className='swap-button' to='/login/' onClick={this.swap}>Sign in!</Link>
+                            </div>
+                        </div>
                     </form>
                 </div>
             );
@@ -134,7 +159,7 @@ export default class SessionForm extends React.Component {
                             <button className='login sessionbutton'>{this.props.formType}</button>
                             <br /><br />
                             <button onClick={this.demoUser}>Demo User</button>
-                            <p> Not a user?</p><Link to='/signup/'>Sign up!</Link>
+                            <p> Not a user?</p><Link className='swap-button' to='/signup/' onClick={this.swap}>Sign up!</Link>
                         </div>
                     </form>
                 </div>
