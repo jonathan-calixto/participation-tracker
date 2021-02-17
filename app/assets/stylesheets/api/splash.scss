@@ -28,64 +28,57 @@
   animation: #{$str};
 }
 
+@include keyframes("button-wiggle-animation") {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
 
-@include keyframes('button-wiggle-animation') {
-   0% {
-     transform: translateX(0px) rotate(0deg);
-   }
+  20% {
+    transform: translateX(-4px) rotate(-4deg);
+  }
 
-   20% {
-     transform: translateX(-4px) rotate(-4deg);
-   }
+  40% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
 
-   40% {
-     transform: translateX(-2px) rotate(-2deg);
-   }
+  60% {
+    transform: translateX(4px) rotate(4deg);
+  }
 
-   60% {
-     transform: translateX(4px) rotate(4deg);
-   }
+  100% {
+    transform: translateX(2px) rotate(2deg);
+  }
 
-   100% {
-     transform: translateX(2px) rotate(2deg);
-   }
-
-   100% {
-     transform: translateX(0px) rotate(0deg);
-   }
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
 }
-
-
-
 
 .splash-wrapper {
 }
 
-
-
 .splash-textbox {
-    width: 600px;
-    height: 400px;
-    background-image: none;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    position: absolute;
-    justify-content: center;
-    padding: 10px;
-    margin: auto;
-    top: 0;
-    left: 20px;
-    right: 0;
-    bottom: 0; 
+  width: 600px;
+  height: 400px;
+  background-image: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+  top: 0;
+  left: 20px;
+  right: 0;
+  bottom: 0;
 }
 
 .splash-header {
-  font-family: 'Cabin',
-  sans-serif;
+  font-family: "Cabin", sans-serif;
   font-size: 46pt;
   text-align: center;
-  text-shadow: 0.01em 0.01em grey;
+  text-shadow: 0.01em 0.03em grey;
 }
 
 .splash-textbox h3 {
@@ -95,8 +88,7 @@
   padding-inline-end: 0px;
   font-weight: bold;
   margin: 0;
-  font-family: 'Raleway',
-  sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .splash-button-wrapper {
@@ -109,18 +101,17 @@
 }
 
 .login {
+  width: 100px;
   padding: 15px 40px;
   letter-spacing: 2px;
   background-color: black;
-  font-family: 'Raleway',
-  sans-serif;
+  font-family: "Raleway", sans-serif;
   text-align: center;
   font-size: 8pt;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .signup {
@@ -130,21 +121,22 @@
 }
 
 .login:hover {
-  @include animation('button-wiggle-animation .8s');
+  @include animation("button-wiggle-animation .8s");
 }
 
 .signup:hover {
-  @include animation('button-wiggle-animation .8s');
+  @include animation("button-wiggle-animation .8s");
 }
 
 .splash-wrapper {
   height: 100%;
-  background-image: image_url('abstract.jpg');
+  background-image: image_url("abstract.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .splash-nav-wrapper {
+  font-family: "Raleway", sans-serif;
   display: flex;
   justify-content: space-between;
   background: none;
@@ -164,6 +156,5 @@
 
 #github:hover {
   text-decoration: underline;
-  transition: ease-in-out .2s;
+  transition: ease-in-out 0.2s;
 }
-

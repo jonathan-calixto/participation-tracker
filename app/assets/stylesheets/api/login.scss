@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Raleway',
-    sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .session-form {
@@ -11,7 +10,7 @@
   height: 600px;
   background-image: none;
   background-color: white;
-  opacity: .9;
+  opacity: 0.9;
   border-radius: 20px;
   // display: flex;
   overflow: hidden;
@@ -19,38 +18,40 @@
 
 .session-form h2 {
   background: transparent;
-   font-family: 'Cabin',
-   sans-serif;
+  font-family: "Cabin", sans-serif;
 }
 
 .sidebar {
-      /* width: 60%; */
-      width: 300px;
-      height: 600px;
-      float: right;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: lightgreen;
-      opacity: .9;
-      text-align: center;
-      display: inline-block;
+  /* width: 60%; */
+  width: 300px;
+  height: 600px;
+  float: right;
+  line-height: 1.5;
+  background-color: #5173b3;
+  opacity: 0.9;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-text {
+  color: white;
 }
 
 .session-details {
-      /* width: 60%; */
-      width: 500px;
-      height: 600px;
-      float: right;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+  /* width: 60%; */
+  width: 500px;
+  height: 600px;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .session-details label {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 8px;
 }
 
 .input-wrapper {
@@ -63,6 +64,7 @@
   background-color: linen;
   height: 50px;
   text-indent: 40px;
+  margin: 5px;
 }
 
 .fontuser {
