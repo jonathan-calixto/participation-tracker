@@ -28,14 +28,20 @@
   animation: #{$str};
 }
 
-
-@include keyframes('swap') {
+@include keyframes("swap") {
   0% {
     transform: none;
   }
 
   100% {
-    transform: translateX(-500px)
+    transform: translateX(-500px);
   }
 }
 
+#left {
+  float: left;
+}
+
+.bottom-links {
+  margin-top: 15px;
+}
